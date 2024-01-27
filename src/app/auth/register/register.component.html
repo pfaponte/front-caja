@@ -5,32 +5,57 @@
     <div class="login-register" style="background-image:url(./assets/images/background/login-register.jpg);">
         <div class="login-box card">
             <div class="card-body">
-                <form class="form-horizontal form-material" id="loginform" action="index.html">
+
+                <form class="form-horizontal form-material" 
+                    id="loginform" 
+                    autocomplete="off"
+                    [formGroup]="registerForm"
+                    (ngSubmit)="create()">
+
                     <h3 class="box-title m-b-20">Sign Up</h3>
                     <div class="form-group">
                         <div class="col-xs-12">
-                            <input class="form-control" type="text" required="" placeholder="Name">
+                            <input  class="form-control" 
+                                    type="text" 
+                                    required="true" 
+                                    placeholder="Name"
+                                    formControlName="name">
                         </div>
                     </div>
                     <div class="form-group ">
                         <div class="col-xs-12">
-                            <input class="form-control" type="text" required="" placeholder="Email">
+                            <input  class="form-control" 
+                                    type="text" 
+                                    required="true" 
+                                    placeholder="Email"
+                                    formControlName="email">
                         </div>
                     </div>
                     <div class="form-group ">
                         <div class="col-xs-12">
-                            <input class="form-control" type="password" required="" placeholder="Password">
+                            <input  class="form-control" 
+                                    type="password" 
+                                    required="true" 
+                                    placeholder="Password"
+                                    formControlName="password">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-xs-12">
-                            <input class="form-control" type="password" required="" placeholder="Confirm Password">
+                            <input  class="form-control" 
+                                    type="password"
+                                    required="true" 
+                                    placeholder="Confirm Password"
+                                    formControlName="password2">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-12">
                             <div class="checkbox checkbox-success p-t-0">
-                                <input id="checkbox-signup" type="checkbox"  class="filled-in chk-col-light-blue">
+                                <input  id="checkbox-signup" 
+                                        type="checkbox"  
+                                        class="filled-in chk-col-light-blue"
+                                        formControlName="terms">
                                 <label for="checkbox-signup"> I agree to all <a href="javascript:void(0)">Terms</a></label>
                             </div>
                         </div>

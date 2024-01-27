@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+declare function customFunction(): any;
+declare function customMinFunction(): any;
 
 @Component({
   selector: 'app-sidebar',
@@ -7,6 +10,11 @@ import { Component } from '@angular/core';
   templateUrl: './sidebar.component.html',
   styles: ``
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
+
+  ngOnInit(): void {
+      customFunction();
+      customMinFunction();
+  }
 
 }

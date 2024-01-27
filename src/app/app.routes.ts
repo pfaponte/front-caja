@@ -6,10 +6,12 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 import { PagesComponent } from './pages/pages.component';
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     { path: '',
         component: PagesComponent,
+        canActivate: [AuthGuard],
         children: [
             { path : 'dashboard', component: DashboardComponent },
             { path : 'client', component: ClientComponent },
